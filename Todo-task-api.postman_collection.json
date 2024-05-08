@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "fba42d80-de50-45cb-ac5f-b7ebf793bbc6",
+		"name": "Todo-task-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23189521"
+	},
+	"item": [
+		{
+			"name": "Get all tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/tasks",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get task by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/tasks/{{taskId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"{{taskId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/tasks?user_id=3&title=Test 3&description=Test 3&parent_id=3&priority=4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "3"
+						},
+						{
+							"key": "title",
+							"value": "Test 3"
+						},
+						{
+							"key": "description",
+							"value": "Test 3"
+						},
+						{
+							"key": "parent_id",
+							"value": "3"
+						},
+						{
+							"key": "priority",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/tasks/{{taskId}}?title=Test 2&description=Test 2&user_id=1&parent_id=2&priority=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"{{taskId}}"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Test 2"
+						},
+						{
+							"key": "description",
+							"value": "Test 2"
+						},
+						{
+							"key": "user_id",
+							"value": "1"
+						},
+						{
+							"key": "parent_id",
+							"value": "2"
+						},
+						{
+							"key": "priority",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update task to done and resend to todo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/tasks/1/complete?user_id=4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"1",
+						"complete"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
