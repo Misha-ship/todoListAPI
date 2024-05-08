@@ -8,17 +8,18 @@ This project is an API for managing a Todo List. It is built using Laravel and u
     ```
     git clone https://github.com/your-github-username/todoListApi.git
     ```
-   
 2. Install Docker Containers:
     ```
     docker-compose up -d --build
     ```
-3. Install Composer dependencies:
+3. enter the docker container   
+    ```
+    docker exec -it laravel_app sh
+    ```
+4. Install Composer dependencies:
     ```
     composer install
     ```
-4. Create a .env file from .env.example and configure your environment variables.
-
 5. Run the database migrations:
     ```
     php artisan migrate
@@ -85,3 +86,5 @@ The `UserSeeder` uses the `UserFactory` to create 10 new users.
 The `TaskSeeder` uses the `TaskFactory` to create 10 new tasks.
 
 To run the seeders, use the following command:
+
+    php artisan db:seed
